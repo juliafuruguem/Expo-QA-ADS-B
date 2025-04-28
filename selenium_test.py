@@ -1,20 +1,31 @@
 from selenium import webdriver
-from selenium.webdriver.firefox.options import Options
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
 import unittest
 
-class AppDynamicsJob(unittest.TestCase):
+class TestGoogleSearch(unittest.TestCase):
 
     def setUp(self):
-        options = Options()
-        options.binary = "/usr/bin/firefox"  # Defina o caminho correto para o binário do Firefox, se necessário
-        self.driver = webdriver.Firefox(options=options)
-        self.driver.get("https://example.com")  # Substitua pelo URL que deseja testar
+        # Inicializa o navegador
+        self.driver = webdriver.Chrome()
 
-    def test_app_dynamics_job(self):
-        # Seu código de teste vai aqui
-        self.assertIn("Example Domain", self.driver.title)
+    def test_search(self):
+        driver = self.driver
+        driver.get("https://www.google.com")
+        
+        # Verificar se a página carregou corretamente
+        self.assertIn("Google", driver.title)
+
+        # Encontrar o campo de busca e realizar uma pesquisa
+        search_box = driver.find_element(By.NAME, "q")
+        search_box.send_keys("Katalon" + Keys.RETURN)
+
+        # Aguardar até que o resultado apareça e verificar o título da página
+        driver.implicitly_wait(10)
+        self.assertIn("Katalon", driver.title)
 
     def tearDown(self):
+        # Fechar o navegador
         self.driver.quit()
 
 if __name__ == "__main__":
