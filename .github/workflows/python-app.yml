@@ -27,12 +27,13 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install -r requirements.txt
+        pip install -r requirements.txt  # Instala as dependências do arquivo requirements.txt
 
     # 4. Rodar os testes com pytest
     - name: Run tests with pytest
       run: |
-        pytest --maxfail=1 --disable-warnings -q  # Aqui você pode customizar os parâmetros do pytest, caso necessário
+        pip install pytest  # Garantir que pytest esteja instalado
+        pytest --maxfail=1 --disable-warnings -q  # Executa os testes com pytest
 
     # 5. (Opcional) Fazer o deploy caso os testes passem
     - name: Deploy application
