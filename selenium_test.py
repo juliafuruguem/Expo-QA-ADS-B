@@ -1,29 +1,21 @@
-# selenium_test.py
 from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support.ui import Select
-from selenium.common.exceptions import NoSuchElementException
-from selenium.common.exceptions import NoAlertPresentException
-import unittest, time
+from selenium.webdriver.firefox.options import Options
+import unittest
 
 class AppDynamicsJob(unittest.TestCase):
+
     def setUp(self):
-        self.driver = webdriver.Firefox()
-        self.driver.implicitly_wait(30)
-        self.base_url = "http://localhost:8081"
-        self.verificationErrors = []
-        self.accept_next_alert = True
-    
+        options = Options()
+        options.binary = "/usr/bin/firefox"  # Defina o caminho correto para o binário do Firefox, se necessário
+        self.driver = webdriver.Firefox(options=options)
+        self.driver.get("https://example.com")  # Substitua pelo URL que deseja testar
+
     def test_app_dynamics_job(self):
-        driver = self.driver
-        driver.get(f"{self.base_url}/perfil-usuario")
-        # Insira o código de navegação e interação aqui, como no seu exemplo original
-        # ...
+        # Seu código de teste vai aqui
+        self.assertIn("Example Domain", self.driver.title)
 
     def tearDown(self):
-        self.driver.quit()  # Finaliza o navegador
-        self.assertEqual([], self.verificationErrors)
+        self.driver.quit()
 
 if __name__ == "__main__":
     unittest.main()
