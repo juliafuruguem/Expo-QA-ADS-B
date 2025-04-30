@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<TestCaseEntity>
+  <description>Teste automatizado do app Diabeta</description>
+  <name>TesteDiabeta</name>
+  <tag/>
+  <isRun>true</isRun>
+  <testSteps>
+    <testStep>
+      <type>Script</type>
+      <script>
+// Script representado em Groovy
+// O conteúdo real está disponível no repositório do projeto.
+</script>
+    </testStep>
+  </testSteps>
+</TestCaseEntity>
