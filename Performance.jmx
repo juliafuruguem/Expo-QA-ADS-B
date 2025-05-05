@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="2.4" jmeter="5.5">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="tEST.APP" enabled="true">
+      <stringProp name="TestPlan.comments">This test plan was created by the BlazeMeter converter v.${project.version}. Please contact support@blazemeter.com for further support.</stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager">
+        <collectionProp name="HeaderManager.headers">
+          <elementProp name="sec-ch-ua" elementType="Header">
+            <stringProp name="Header.name">sec-ch-ua</stringProp>
+            <stringProp name="Header.value">&quot;Google Chrome&quot;;v=&quot;135&quot;, &quot;Not-A.Brand&quot;;v=&quot;8&quot;, &quot;Chromium&quot;;v=&quot;135&quot;</stringProp>
+          </elementProp>
+          <elementProp name="sec-ch-ua-mobile" elementType="Header">
+            <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+            <stringProp name="Header.value">?0</stringProp>
+          </elementProp>
+          <elementProp name="sec-ch-ua-platform" elementType="Header">
+            <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+            <stringProp name="Header.value">&quot;Windows&quot;</stringProp>
+          </elementProp>
+          <elementProp name="User-Agent" elementType="Header">
+            <stringProp name="Header.name">User-Agent</stringProp>
+            <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36</stringProp>
+          </elementProp>
+        </collectionProp>
+      </HeaderManager>
+      <hashTree/>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="BASE_URL_1" elementType="Argument">
+            <stringProp name="Argument.name">BASE_URL_1</stringProp>
+            <stringProp name="Argument.value">localhost</stringProp>
+          </elementProp>
+          <elementProp name="BASE_URL_2" elementType="Argument">
+            <stringProp name="Argument.name">BASE_URL_2</stringProp>
+            <stringProp name="Argument.value">api.nal.usda.gov</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
+        <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+          <collectionProp name="Arguments.arguments"/>
+        </elementProp>
+        <boolProp name="HTTPSampler.concurrentDwn">true</boolProp>
+        <boolProp name="HTTPSampler.image_parser">true</boolProp>
+        <intProp name="HTTPSampler.concurrentPool">6</intProp>
+      </ConfigTestElement>
+      <hashTree/>
+      <DNSCacheManager guiclass="DNSCachePanel" testclass="DNSCacheManager" testname="DNS Cache Manager" enabled="true">
+        <collectionProp name="DNSCacheManager.servers"/>
+        <boolProp name="DNSCacheManager.clearEachIteration">true</boolProp>
+      </DNSCacheManager>
+      <hashTree/>
+      <AuthManager guiclass="AuthPanel" testclass="AuthManager" testname="HTTP Authorization Manager">
+        <collectionProp name="AuthManager.auth_list"/>
+      </AuthManager>
+      <hashTree/>
+      <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
+        <collectionProp name="CookieManager.cookies"/>
+        <boolProp name="CookieManager.clearEachIteration">true</boolProp>
+      </CookieManager>
+      <hashTree/>
+      <CacheManager guiclass="CacheManagerGui" testclass="CacheManager" testname="HTTP Cache Manager">
+        <boolProp name="clearEachIteration">true</boolProp>
+        <boolProp name="useExpires">false</boolProp>
+      </CacheManager>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <intProp name="ThreadGroup.num_threads">1</intProp>
+        <intProp name="ThreadGroup.ramp_time">1</intProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <longProp name="ThreadGroup.duration">0</longProp>
+        <longProp name="ThreadGroup.delay">0</longProp>
+      </ThreadGroup>
+      <hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testname="Test" enabled="true">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="http://localhost:5000/api/users" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;nome&quot;:&quot;Julia&quot;,&quot;idade&quot;:27,&quot;sexo&quot;:&quot;Feminino&quot;,&quot;altura&quot;:165,&quot;peso&quot;:66,&quot;tipoDiabetes&quot;:&quot;Tipo 1&quot;,&quot;metaGlicemia&quot;:140}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <intProp name="HTTPSampler.port">5000</intProp>
+            <stringProp name="HTTPSampler.path">api/users</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPSampler.header_manager" elementType="HeaderManager" guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp reference="../../../HTTPSamplerProxy/elementProp[2]/collectionProp"/>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="http://localhost:5000/api/glicemia" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;valor&quot;:140,&quot;periodo&quot;:&quot;antes-das-refeicoes&quot;,&quot;dataHora&quot;:&quot;2025-05-05T19:34:16.888Z&quot;,&quot;userId&quot;:&quot;681912b4cccceb7dda3f6e66&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <intProp name="HTTPSampler.port">5000</intProp>
+            <stringProp name="HTTPSampler.path">api/glicemia</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPSampler.header_manager" elementType="HeaderManager" guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp reference="../../../HTTPSamplerProxy[2]/elementProp[2]/collectionProp"/>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="http://localhost:5000/api/historico/681912b4cccceb7dda3f6e66?tipo=todos" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="tipo" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">tipo</stringProp>
+                  <stringProp name="Argument.value">todos</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <intProp name="HTTPSampler.port">5000</intProp>
+            <stringProp name="HTTPSampler.path">api/historico/681912b4cccceb7dda3f6e66</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <elementProp name="HTTPSampler.header_manager" elementType="HeaderManager" guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp reference="../../../HTTPSamplerProxy[3]/elementProp[2]/collectionProp"/>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://api.nal.usda.gov/fdc/v1/foods/search?query=arroz&amp;api_key=49tBNs0IRGawr64IhQ9MVG8Y66ydETnSZg2LYm2O" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="api_key" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">api_key</stringProp>
+                  <stringProp name="Argument.value">49tBNs0IRGawr64IhQ9MVG8Y66ydETnSZg2LYm2O</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="query" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">query</stringProp>
+                  <stringProp name="Argument.value">arroz</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <intProp name="HTTPSampler.port">0</intProp>
+            <stringProp name="HTTPSampler.path">fdc/v1/foods/search</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <elementProp name="HTTPSampler.header_manager" elementType="HeaderManager" guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp reference="../../../HTTPSamplerProxy[4]/elementProp[2]/collectionProp"/>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="http://localhost:5000/api/refeicoes" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;tipoRefeicao&quot;:&quot;jantar&quot;,&quot;alimentos&quot;:[{&quot;id&quot;:&quot;168066&quot;,&quot;nome&quot;:&quot;Restaurant, Latino, Arroz con grandules (rice and pigeonpeas)&quot;,&quot;carboidratos&quot;:30.8,&quot;proteinas&quot;:3.5,&quot;gorduras&quot;:4.98,&quot;calorias&quot;:182},{&quot;id&quot;:&quot;168063&quot;,&quot;nome&quot;:&quot;Restaurant, Latino, arroz con leche (rice pudding)&quot;,&quot;carboidratos&quot;:24.9,&quot;proteinas&quot;:3.2,&quot;gorduras&quot;:3.69,&quot;calorias&quot;:610},{&quot;id&quot;:&quot;168064&quot;,&quot;nome&quot;:&quot;Restaurant, Latino, Arroz con frijoles negros (rice and black beans)&quot;,&quot;carboidratos&quot;:24.4,&quot;proteinas&quot;:4.64,&quot;gorduras&quot;:3.85,&quot;calorias&quot;:151},{&quot;id&quot;:&quot;168065&quot;,&quot;nome&quot;:&quot;Restaurant, Latino, Arroz con habichuelas colorados (Rice And Red Beans)&quot;,&quot;carboidratos&quot;:23.7,&quot;proteinas&quot;:3.96,&quot;gorduras&quot;:3.46,&quot;calorias&quot;:594},{&quot;id&quot;:&quot;167938&quot;,&quot;nome&quot;:&quot;Pan Dulce, La Ricura, Salpora de Arroz con Azucar, cookie-like, contains wheat flour and rice flour&quot;,&quot;carboidratos&quot;:66.3,&quot;proteinas&quot;:8.81,&quot;gorduras&quot;:16.1,&quot;calorias&quot;:1860},{&quot;id&quot;:&quot;2385728&quot;,&quot;nome&quot;:&quot;ARROZ CASERO, ARROZ&quot;,&quot;carboidratos&quot;:24.8,&quot;proteinas&quot;:1.77,&quot;gorduras&quot;:4.42,&quot;calorias&quot;:151},{&quot;id&quot;:&quot;2545170&quot;,&quot;nome&quot;:&quot;ARROZ MEXICAN RICE, ARROZ&quot;,&quot;carboidratos&quot;:28.3,&quot;proteinas&quot;:2.65,&quot;gorduras&quot;:7.08,&quot;calorias&quot;:195},{&quot;id&quot;:&quot;2423117&quot;,&quot;nome&quot;:&quot;ARROZ MEXICAN RICE, ARROZ&quot;,&quot;carboidratos&quot;:28.3,&quot;proteinas&quot;:0,&quot;gorduras&quot;:7.08,&quot;calorias&quot;:195},{&quot;id&quot;:&quot;369316&quot;,&quot;nome&quot;:&quot;ARROZ, PARBOILED RICE&quot;,&quot;carboidratos&quot;:84.4,&quot;proteinas&quot;:6.67,&quot;gorduras&quot;:0,&quot;calorias&quot;:378},{&quot;id&quot;:&quot;2117350&quot;,&quot;nome&quot;:&quot;ARROZ CON LECHE&quot;,&quot;carboidratos&quot;:24.2,&quot;proteinas&quot;:3.12,&quot;gorduras&quot;:2.73,&quot;calorias&quot;:133},{&quot;id&quot;:&quot;2587281&quot;,&quot;nome&quot;:&quot;ARROZ CON LECHE&quot;,&quot;carboidratos&quot;:31.8,&quot;proteinas&quot;:3.53,&quot;gorduras&quot;:3.53,&quot;calorias&quot;:168},{&quot;id&quot;:&quot;2121533&quot;,&quot;nome&quot;:&quot;ARROZ RICE WITH VEGETABLES&quot;,&quot;carboidratos&quot;:25,&quot;proteinas&quot;:2.14,&quot;gorduras&quot;:4.29,&quot;calorias&quot;:150},{&quot;id&quot;:&quot;1983463&quot;,&quot;nome&quot;:&quot;SALPORA DE ARROZ&quot;,&quot;carboidratos&quot;:217,&quot;proteinas&quot;:100,&quot;gorduras&quot;:66.7,&quot;calorias&quot;:1670},{&quot;id&quot;:&quot;2467039&quot;,&quot;nome&quot;:&quot;ARROZ CON LECHE RICE PUDDING, ARROZ CON LECHE&quot;,&quot;carboidratos&quot;:38.9,&quot;proteinas&quot;:3.54,&quot;gorduras&quot;:3.1,&quot;calorias&quot;:195},{&quot;id&quot;:&quot;2178171&quot;,&quot;nome&quot;:&quot;ARROZ CON LECHE RICE PUDDING, ARROZ CON LECHE&quot;,&quot;carboidratos&quot;:20.4,&quot;proteinas&quot;:2.65,&quot;gorduras&quot;:2.21,&quot;calorias&quot;:115},{&quot;id&quot;:&quot;2463948&quot;,&quot;nome&quot;:&quot;YUCATAN ARROZ ROJO MICROWAVABLE FLAVORED RICE, YUCATAN ARROZ ROJO&quot;,&quot;carboidratos&quot;:20.4,&quot;proteinas&quot;:2.4,&quot;gorduras&quot;:1.8,&quot;calorias&quot;:108},{&quot;id&quot;:&quot;2215224&quot;,&quot;nome&quot;:&quot;ARROZ CON LECHE TRADITIONAL RICE PUDDING SNACK CUPS, ARROZ CON LECHE&quot;,&quot;carboidratos&quot;:19.5,&quot;proteinas&quot;:3.54,&quot;gorduras&quot;:1.77,&quot;calorias&quot;:106},{&quot;id&quot;:&quot;2708980&quot;,&quot;nome&quot;:&quot;Rice with stewed beans, Puerto Rican style&quot;,&quot;carboidratos&quot;:23.02,&quot;proteinas&quot;:3.66,&quot;gorduras&quot;:3.23,&quot;calorias&quot;:138},{&quot;id&quot;:&quot;2708432&quot;,&quot;nome&quot;:&quot;Rice, white, cooked with fat, Puerto Rican style&quot;,&quot;carboidratos&quot;:31.9,&quot;proteinas&quot;:2.84,&quot;gorduras&quot;:6.3,&quot;calorias&quot;:200},{&quot;id&quot;:&quot;2708977&quot;,&quot;nome&quot;:&quot;Rice with squid, Puerto Rican style&quot;,&quot;carboidratos&quot;:29.31,&quot;proteinas&quot;:8.87,&quot;gorduras&quot;:11.8,&quot;calorias&quot;:264},{&quot;id&quot;:&quot;2708978&quot;,&quot;nome&quot;:&quot;Rice with vienna sausage, Puerto Rican style&quot;,&quot;carboidratos&quot;:33.54,&quot;proteinas&quot;:6.46,&quot;gorduras&quot;:11.6,&quot;calorias&quot;:269},{&quot;id&quot;:&quot;2709032&quot;,&quot;nome&quot;:&quot;Rice, cooked with coconut milk&quot;,&quot;carboidratos&quot;:26.55,&quot;proteinas&quot;:3.57,&quot;gorduras&quot;:17.23,&quot;calorias&quot;:267},{&quot;id&quot;:&quot;2708976&quot;,&quot;nome&quot;:&quot;Stewed rice, Puerto Rican style&quot;,&quot;carboidratos&quot;:33.43,&quot;proteinas&quot;:3.96,&quot;gorduras&quot;:7.8,&quot;calorias&quot;:224},{&quot;id&quot;:&quot;2708979&quot;,&quot;nome&quot;:&quot;Rice with Spanish sausage, Puerto Rican style&quot;,&quot;carboidratos&quot;:32.39,&quot;proteinas&quot;:8.39,&quot;gorduras&quot;:13.58,&quot;calorias&quot;:289},{&quot;id&quot;:&quot;2710143&quot;,&quot;nome&quot;:&quot;Stuffed cabbage, with meat and rice, Syrian dish, Puerto Rican style&quot;,&quot;carboidratos&quot;:11.14,&quot;proteinas&quot;:3.14,&quot;gorduras&quot;:2.95,&quot;calorias&quot;:84},{&quot;id&quot;:&quot;2117351&quot;,&quot;nome&quot;:&quot;ARROZ CON LECHE RICE PUDDING&quot;,&quot;carboidratos&quot;:24.5,&quot;proteinas&quot;:2.9,&quot;gorduras&quot;:2.9,&quot;calorias&quot;:137},{&quot;id&quot;:&quot;484112&quot;,&quot;nome&quot;:&quot;ARROZ CON POLLO MEAL BOWL&quot;,&quot;carboidratos&quot;:37,&quot;proteinas&quot;:9.86,&quot;gorduras&quot;:3.52,&quot;calorias&quot;:218},{&quot;id&quot;:&quot;2598677&quot;,&quot;nome&quot;:&quot;ARROZ MEXICANO MEXICAN STYLE RICE&quot;,&quot;carboidratos&quot;:77.8,&quot;proteinas&quot;:4.44,&quot;gorduras&quot;:0,&quot;calorias&quot;:356},{&quot;id&quot;:&quot;1896928&quot;,&quot;nome&quot;:&quot;RICE PUDDING, ARROZ CON LECHE&quot;,&quot;carboidratos&quot;:16.4,&quot;proteinas&quot;:3.12,&quot;gorduras&quot;:3.12,&quot;calorias&quot;:102},{&quot;id&quot;:&quot;2586131&quot;,&quot;nome&quot;:&quot;RICE WITH CHICKEN, ARROZ CON POLLO&quot;,&quot;carboidratos&quot;:19,&quot;proteinas&quot;:6.69,&quot;gorduras&quot;:3.52,&quot;calorias&quot;:134},{&quot;id&quot;:&quot;2621220&quot;,&quot;nome&quot;:&quot;ARROZ CON POLLO RICE AND CHICKEN FLAVORED SEASONING MIX COMIDA KIT, ARROZ CON POLLO&quot;,&quot;carboidratos&quot;:72.7,&quot;proteinas&quot;:9.09,&quot;gorduras&quot;:2.27,&quot;calorias&quot;:341},{&quot;id&quot;:&quot;2061961&quot;,&quot;nome&quot;:&quot;ARROZ INFLADO CON SABOR A CHOCOLATE CEREAL&quot;,&quot;carboidratos&quot;:86.7,&quot;proteinas&quot;:3.33,&quot;gorduras&quot;:3.33,&quot;calorias&quot;:400},{&quot;id&quot;:&quot;2596437&quot;,&quot;nome&quot;:&quot;SPANISH STYLE ARROZ AMARILLO YELLOW RICE&quot;,&quot;carboidratos&quot;:77.8,&quot;proteinas&quot;:6.67,&quot;gorduras&quot;:0,&quot;calorias&quot;:356},{&quot;id&quot;:&quot;2663595&quot;,&quot;nome&quot;:&quot;ARROZ CON LECHE RICE PUDDING FLAVORED DESSERT YOGURT SMOOTHIE, ARROZ CON LECHE RICE PUDDING&quot;,&quot;carboidratos&quot;:16.7,&quot;proteinas&quot;:2.53,&quot;gorduras&quot;:2.27,&quot;calorias&quot;:96},{&quot;id&quot;:&quot;1855629&quot;,&quot;nome&quot;:&quot;TRES ESTRELLAS, RICE FLOUR HARINA DE ARROZ&quot;,&quot;carboidratos&quot;:77.8,&quot;proteinas&quot;:8.33,&quot;gorduras&quot;:2.78,&quot;calorias&quot;:361},{&quot;id&quot;:&quot;2015040&quot;,&quot;nome&quot;:&quot;PARBOILED RICE&quot;,&quot;carboidratos&quot;:77.8,&quot;proteinas&quot;:8.89,&quot;gorduras&quot;:0,&quot;calorias&quot;:356},{&quot;id&quot;:&quot;2178880&quot;,&quot;nome&quot;:&quot;ENRICHED LONG GRAIN RICE&quot;,&quot;carboidratos&quot;:77.8,&quot;proteinas&quot;:6.67,&quot;gorduras&quot;:0,&quot;calorias&quot;:356},{&quot;id&quot;:&quot;2060729&quot;,&quot;nome&quot;:&quot;ENRICHED PARBOILED LONG GRAIN RICE&quot;,&quot;carboidratos&quot;:80.8,&quot;proteinas&quot;:8.51,&quot;gorduras&quot;:0,&quot;calorias&quot;:362},{&quot;id&quot;:&quot;2308340&quot;,&quot;nome&quot;:&quot;MEDIUM GRAIN RICE&quot;,&quot;carboidratos&quot;:75.6,&quot;proteinas&quot;:8.89,&quot;gorduras&quot;:0,&quot;calorias&quot;:333},{&quot;id&quot;:&quot;2288461&quot;,&quot;nome&quot;:&quot;PEARL RICE&quot;,&quot;carboidratos&quot;:80.4,&quot;proteinas&quot;:6.52,&quot;gorduras&quot;:0,&quot;calorias&quot;:348},{&quot;id&quot;:&quot;2029407&quot;,&quot;nome&quot;:&quot;RED RICE SEASONING MIX&quot;,&quot;carboidratos&quot;:0,&quot;proteinas&quot;:0,&quot;gorduras&quot;:0,&quot;calorias&quot;:0},{&quot;id&quot;:&quot;2038650&quot;,&quot;nome&quot;:&quot;WHITE RICE SEASONING MIX&quot;,&quot;carboidratos&quot;:0,&quot;proteinas&quot;:0,&quot;gorduras&quot;:0,&quot;calorias&quot;:0}],&quot;totalCarboidratos&quot;:39,&quot;totalProteinas&quot;:7.08,&quot;totalGorduras&quot;:3.54,&quot;totalCalorias&quot;:212,&quot;dataHora&quot;:&quot;05/05/2025&quot;,&quot;userId&quot;:&quot;681912b4cccceb7dda3f6e66&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <intProp name="HTTPSampler.port">5000</intProp>
+            <stringProp name="HTTPSampler.path">api/refeicoes</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPSampler.header_manager" elementType="HeaderManager" guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp reference="../../../HTTPSamplerProxy[5]/elementProp[2]/collectionProp"/>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="http://localhost:5000/api/historico" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <intProp name="HTTPSampler.port">5000</intProp>
+            <stringProp name="HTTPSampler.path">api/historico</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <elementProp name="HTTPSampler.header_manager" elementType="HeaderManager" guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp reference="../../../HTTPSamplerProxy[6]/elementProp[2]/collectionProp"/>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="http://localhost:5000/api/users" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <intProp name="HTTPSampler.port">5000</intProp>
+            <stringProp name="HTTPSampler.path">api/users</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <elementProp name="HTTPSampler.header_manager" elementType="HeaderManager" guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp reference="../../../HTTPSamplerProxy[7]/elementProp[2]/collectionProp"/>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
