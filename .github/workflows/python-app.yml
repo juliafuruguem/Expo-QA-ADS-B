@@ -3,29 +3,29 @@ name: Python application
 on:
   push:
     branches: 
-      - main  # Ou qualquer outra branch em que você deseja rodar o workflow
+      - main
   pull_request:
     branches:
-      - main  # Rodar quando houver PRs para a branch principal
+      - main
 
 jobs:
   build:
-    runs-on: ubuntu-latest  # Ambiente onde os testes serão executados
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2  # Faz o checkout do código no repositório
+        uses: actions/checkout@v2
 
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.9'  # Versão do Python
+          python-version: '3.9'
 
       - name: Install dependencies
         run: |
           pip install --upgrade pip
-          pip install -r requirements.txt  # Instalar as dependências listadas no requirements.txt
+          pip install pytest
 
       - name: Run tests with pytest
         run: |
-          pytest --maxfail=1 --disable-warnings -q  # Executa os testes, limitando a 1 falha e desabilitando avisos
+          pytest --maxfail=1 --disable-warnings -q
